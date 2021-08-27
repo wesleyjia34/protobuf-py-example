@@ -1,0 +1,23 @@
+syntax = 'proto3';
+package todos;
+
+import "google/protobuf/timestamp.proto";
+
+enum TodoPriority {
+    HIGH = 0;
+    MEDIUM = 1;
+    LOW = 2;
+}
+
+message Todo {
+    int32 id = 1;
+    string description = 2;
+    google.protobuf.Timestamp due_date = 3;
+    // int32 due_date = 3;
+    TodoPriority priority = 4;
+}
+
+message Todos {
+    repeated Todo todos = 1;
+}
+
